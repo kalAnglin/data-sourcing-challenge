@@ -1,5 +1,7 @@
 # Data-Sourcing-Challenge
 
+I worked with a LA on AskBSC-308443, 308584, 308614,  and tutor Mohammed Fauwaaz in a Tutor Session on BCS to complete this assignment.
+
 ## Overview
 Prepare data for a recommendation system to help people find movie reviews and related movies. Extract data from The New York Times API and The Movie Database, then merge the data together. Keep in mind, the text extracted from these APIs can later be used with natural language processing methods.
 
