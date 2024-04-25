@@ -3,24 +3,30 @@
 I worked with a LA on AskBSC-308443, 308584, 308614, tutor Mohammed Fauwaaz in a Tutor Session on BCS and ChatGPT to complete this assignment.
 
 ## Overview
-Prepare data for a recommendation system to help people find movie reviews and related movies. Extract data from The New York Times API and The Movie Database, then merge the data together. Keep in mind, the text extracted from these APIs can later be used with natural language processing methods.
+Prepare data for a recommendation system to help people find movie reviews and related movies.
 
 ## Purpose
+To extract data from The New York Times API and The Movie Database, then merge and clean the data for later use with natural language processing methods.
 
 ## Business Advantage [^1]
 
-![Content_Recommendation](images/movie_system-1.webp)
+Due the abundance of streaming content, recommender systems have become popular to help personalize platforms and help users find preferred content.
+Recommender systems personalize the user experience and from a business standpoint, the more relevant the product, the higher the user engagement, resulting in an increase in revenue for platforms.
 
 ## Landscape
+
+![Content_Recommendation](images/movie_system-1.webp)
+
+Content-Based Movie Recommendation Systems: These recommender systems use content-based machine learning algorithms to provide recommendations based on the similarity of movie attributes. For example, when the user watches a action movie starring Bruce Willis, the system recommends movies in the same genre, or starring the same actor, or both.
 
 ## Results
 
 ### Part 1
-1. The base URL is included in started code, along with the search string and query dates. Consult the NYT Article Search API documentation to help build "query_url" using the variables.
+1. Using the base URL included in the starter code, a "query_url' or search string was created that included a filter_query, sort filter, field_list, and query dates, based on the NYT Article Search API documentation.
 
-2. Create an empty list called "review_list" to store the reviews you retrieve from the API.
+2. An empty list was created called "reviews_list" to store the reviews retrieved from the API.
 
-3. To bypass the Article Search API limiit of 10 per page (need to retrieve 200) create a "for" loop to loop through 20 pages (starting from page 0). Peform the following actions inside the loop:
+3. To bypass the Article Search API limiit of 10 per page (need to retrieve 200) a "for" loop was created to loop through 20 pages (starting from page 0). The following actions were performed inside the loop:
   - Extend the "query_url" created in Step 1 to include the "page" parameter
   - Make a "GET" request to retrieve the page of results, and store the JSON data in a variable called "reviews."
   - Add a 12-second interval between queries to stay within API query limits. (NYT limits requests to 500 per day     and 5 per minute.
@@ -79,9 +85,10 @@ The following steps were used to merge the two DataFrames created by the data co
 3.  Delete any duplicate rows and reset the index
 4.  Export data to a CSV file without the DataFrame's index.
   
-
 ## Recommendations
 
 ![Content_Recommendation](images/movie_system-2.webp)
+
+Collaborative Filtering Movie Recommendation Systems
 
 [^1]: https://towardsdatascience.com/how-to-build-a-movie-recommendation-system-67e321339109
