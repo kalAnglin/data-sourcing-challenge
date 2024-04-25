@@ -10,28 +10,28 @@ To extract data from The New York Times API and The Movie Database, then merge a
 
 ## Business Advantage [^1]
 
-Due the abundance of streaming content, recommender systems have become popular to help personalize platforms and help users find preferred content.
-Recommender systems personalize the user experience and from a business standpoint, the more relevant the product, the higher the user engagement, resulting in an increase in revenue for platforms.
+Due to the abundance of streaming content, recommender systems have become popular to help personalize platforms and help users find preferred content.
+Recommender systems personalize the user experience which is a key business advantage because the more relevant the product, the higher the user engagement, resulting in an increase in revenue for the platform.
 
 ## Landscape
 
 ![Content_Recommendation](images/movie_system-1.webp)
 
-Content-Based Movie Recommendation Systems: These recommender systems use content-based machine learning algorithms to provide recommendations based on the similarity of movie attributes. For example, when the user watches a action movie starring Bruce Willis, the system recommends movies in the same genre, or starring the same actor, or both.
+Content-Based Movie Recommendation Systems use content-based machine learning algorithms to provide recommendations based on the similarity of movie attributes. For example, when the user watches a action movie starring Bruce Willis, the system recommends movies in the same genre, or starring the same actor, or both.
 
 ## Results
 
 ### Part 1
-1. Using the base URL included in the starter code, a "query_url' or search string was created that included a filter_query, sort filter, field_list, and query dates, based on the NYT Article Search API documentation.
+1. Using the base URL included in the starter code, a "query_url' was created that included string search variables filter_query, sort filter, field_list, and query dates, based on the NYT Article Search API documentation.
 
 2. An empty list was created called "reviews_list" to store the reviews retrieved from the API.
 
 3. To bypass the Article Search API limiit of 10 per page (need to retrieve 200) a "for" loop was created to loop through 20 pages (starting from page 0). The following actions were performed inside the loop:
-  - Extend the "query_url" created in Step 1 to include the "page" parameter
-  - Make a "GET" request to retrieve the page of results, and store the JSON data in a variable called "reviews."
-  - Add a 12-second interval between queries to stay within API query limits. (NYT limits requests to 500 per day     and 5 per minute.
-  - Write a try-except clause that performs the following actions:
-    * "try": loop through the "reviews['respone']['docs'] and append each review to the list, then print out the      query page number (i.e. the number of times the loop has executed).
+  - Extended the "query_url" created in Step 1 to include the "page" parameter
+  - Executed a "GET" request to retrieve the page of results, and stored the JSON data in a variable called "reviews."
+  - Added a 12-second interval between queries to stay within API query limits. (NYT limits requests to 500 per day and 5 per minute.
+  - Try-except clause wasccoded to perform the following actions:
+    * "try": loop through the "reviews['respone']['docs'] and append each review to the list, then print out the query page number which also represents         the number of times the loop has executed).
     * "except": Print the page number that had no results then break from the loop. (If your loop breaks at the
       "except" clause, it is possilbe you have to make a request that fell outside of the rate limit. You should         be able to loop through all 20 pages with the provided query parameterss
 
