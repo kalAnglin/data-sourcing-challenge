@@ -1,13 +1,16 @@
 # Data-Sourcing-Challenge
 
-I worked with a LA on AskBSC-308443, 308584, 308614,  and tutor Mohammed Fauwaaz in a Tutor Session on BCS to complete this assignment.
+I worked with a LA on AskBSC-308443, 308584, 308614, tutor Mohammed Fauwaaz in a Tutor Session on BCS and ChatGPT to complete this assignment.
 
 ## Overview
 Prepare data for a recommendation system to help people find movie reviews and related movies. Extract data from The New York Times API and The Movie Database, then merge the data together. Keep in mind, the text extracted from these APIs can later be used with natural language processing methods.
 
 ## Purpose
 
-## Business Advantage
+## Business Advantage [^1]
+
+
+
 
 ## Landscape
 
@@ -53,12 +56,29 @@ Use the "titles" list created in Part 1 to perform queries with The Movie Databa
   - Peform a "GET" request that sends the title to The Movie Database search and retrieves the JSON results.
   - Use a "try" clause that performs the following actions:
     * Collect the movie ID from the first result.
-    * Make a "GET" request using the movie query (starting with https://api.themoviedb.org/3/movie/) and movie ID     to retrieve the full movie details in JSON format.
+    * Make a "GET" request using the movie query (starting with https://api.themoviedb.org/3/movie/) and movie ID to retrieve the full movie details in JSON format.
     * Extract the genre names from the results into a list called "genres".
     * Extract the "spoken_languages" English name from the results into a list called "spoken_languages".
     * Extract the "production_countries" name from the results into a list called "production_countries".
     * Create a dictionary with the following results: "title", "original_title", "budget", "original_language",
-      "homepage", "overview", 
+      "homepage", "overview", "popularity", "runtime", "revenue", "release date", "vote_average", "vote_count", "genre", "spoken_languages",                     "production_countries"
+    * Append this dictionary to the tmdb_movie_list
+    * Print out the name of the movie and a message to indicate that the title was found.
+  - Use the except clause to print out a statement if a movie is not found.
+4.  Preview the first five results in JSON format using "json.dumps" with the argument "indent=4" to format the data.
+5.  Convert the results to a DataFrame called "tmdb_df" with "pd.DataFrame()". Because we don't have nested objects we don't need to use json_normalize().
+
+### Part 3
+The following steps were used to merge the two DataFrames created by the data collected from both APIs, clean the data, and export it for future use.
+1.  Merge the TMDB and New York Times reviews DataFrame on the "title" column.
+2.  To display all columns as strings without the list characters ([, [, ') the following actions were performed:
+  - Create a list of columns that need fixing called "columns_to_fix"
+  - Create a list of characters to remove called "characters_to_remove"
+  - Loop through "columns_to_fix" and do the following:
+    * Use "astype()" to convert the column to a string.
+    * Loop through the "characters_to_remove" and use the Pandas "str.replace()" method to remove the character from the string.
+3.  Delete any duplicate rows and reset the index
+4.  Export data to a CSV file without the DataFrame's index.
   
 
 ## Recommendations
