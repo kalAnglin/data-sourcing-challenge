@@ -9,8 +9,7 @@ Prepare data for a recommendation system to help people find movie reviews and r
 
 ## Business Advantage [^1]
 
-
-
+![Content_Recommendation](images/movie_system-1.webp)
 
 ## Landscape
 
@@ -82,5 +81,7 @@ The following steps were used to merge the two DataFrames created by the data co
   
 
 ## Recommendations
+
+![Content_Recommendation](images/movie_system-2.webp)
 
 [^1]: https://towardsdatascience.com/how-to-build-a-movie-recommendation-system-67e321339109
