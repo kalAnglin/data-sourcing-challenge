@@ -82,3 +82,5 @@ The following steps were used to merge the two DataFrames created by the data co
   
 
 ## Recommendations
+
+[^1]: https://towardsdatascience.com/how-to-build-a-movie-recommendation-system-67e321339109
